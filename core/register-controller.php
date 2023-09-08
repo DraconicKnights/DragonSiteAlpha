@@ -1,6 +1,6 @@
 <?php 
 
-class RegisterController {
+class RegisterController extends Register {
 
     private $firstname;
     private $lastname;
@@ -15,7 +15,7 @@ class RegisterController {
         $this->email = $email;
     }
 
-    private function registerUser() {
+    public function registerUser() {
         if ($this->emptyInput() == false) {
             header("location: ../site/index.html?error=emptyinput");
             exit();
@@ -33,7 +33,7 @@ class RegisterController {
             exit();
         }
 
-        $this->setUser();
+        $this->setUser($this->firstname, $this->lastname, $this->password, $this->email);
 
     }
 
@@ -70,12 +70,10 @@ class RegisterController {
         return $result;
     }
 
-
-
     private function emailTakenCheck() {
         $result = false;
 
-        if (!$this>checkUser($this->firstname, $this->email)) {
+        if (!$this->checkUser($this->firstname, $this->email)) {
             $result = false;
         } else {
             $result = true;
