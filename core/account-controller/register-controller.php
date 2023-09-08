@@ -17,19 +17,19 @@ class RegisterController extends Register {
 
     public function registerUser() {
         if ($this->emptyInput() == false) {
-            header("location: ../site/index.html?error=emptyinput");
+            header("location: ../../site/index.php?error=emptyinput");
             exit();
         }
         if ($this->invalidName() == false) {
-            header("location: ../site/index.html?error=name");
+            header("location: ../../site/index.php?error=name");
             exit();
         }
         if ($this->invalidEmail() == false) {
-            header("location: ../site/index.html?error=email");
+            header("location: ../../site/index.php?error=email");
             exit();
         }
         if ($this->emailTakenCheck() == false) {
-            header("location: ../site/index.html?error=emailtaken");
+            header("location: ../../site/index.php?error=emailtaken");
             exit();
         }
 

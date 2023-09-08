@@ -13,7 +13,7 @@ class LoginController extends Login {
 
     public function loginUser() {
         if ($this->emptyInput() == false) {
-            header("location: ../site/index.html?error=emptyinput");
+            header("location: ../../site/index.php?error=emptyinput");
             exit();
         }
 

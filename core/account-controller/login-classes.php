@@ -8,13 +8,13 @@ class Login extends Dbh {
 
         if (!$stmt->execute(array($email, $password))) {
             $stmt = null;
-            header("location: ../site/index.html?error=stmtfailed");
+            header("location: ../../site/index.php?error=stmtfailed");
             exit();
         }
 
         if ($stmt->rowCount() == 0) {
             $stmt = null;
-            header("location: ../site/index.html?error=nouser");
+            header("location: ../../site/index.php?error=nouser");
             exit();
         }
 
@@ -24,20 +24,20 @@ class Login extends Dbh {
 
         if ($checkPwd == false) {
             $stmt = null;
-            header("location: ../site/index.html?error=wrongpassword");
+            header("location: ../../site/index.php?error=wrongpassword");
             exit();
         } else if($checkPwd == true) {
             $stmt = $this->connect()->prepare('SELECT * FROM accounts WHERE email = ? OR pwd = ?;');
 
             if (!$stmt->execute(array($email, $password))) {
                 $stmt = null;
-                header("location: ../site/index.html?error=stmtfailed");
+                header("location: ../../site/index.php?error=stmtfailed");
                 exit();
             }
 
             if (!$stmt->rowCount() == 0) {
                 $stmt = null;
-                header("location: ../site/index.html?error=nouser");
+                header("location: ../../site/index.php?error=nouser");
                 exit();
             }
 

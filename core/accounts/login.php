@@ -1,6 +1,6 @@
 <?php 
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submit"])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Grabbing Web Data
 
@@ -9,9 +9,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submit"])) {
 
     // Instantiate Classes
 
-    include "../core/includes/db.php";
-    include "../core/login-classes.php";
-    include "../core/login-controller.php";
+    include "../includes/db.php";
+    include "../account-controller/login-classes.php";
+    include "../account-controller/login-controller.php";
     $login = new LoginController($email, $password);
 
     // Calls the registerUser method
@@ -20,9 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submit"])) {
 
     //Re-directs the user to the dashboard page if succsessfull
 
-    header("location: ../site/dashboard.php");
+    header("location: ../../site/dashboard.php");
 
 
 } else {
-    header("Location: ../site/index.html");
+    header("Location: ../../site/index.php");
 }
