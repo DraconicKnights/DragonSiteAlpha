@@ -4,7 +4,7 @@ class Register extends Dbh {
 
     protected function setUser($firstname, $lastname, $email, $password) {
 
-        $stmt = $this->connect()->prepare('INSERT INTO users (firstname, lastname, email, pwd) VALUES (?, ?, ?, ?');
+        $stmt = $this->connect()->prepare('INSERT INTO accounts (firstname, lastname, email, pwd) VALUES (?, ?, ?, ?');
 
         $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
@@ -29,7 +29,7 @@ class Register extends Dbh {
 
     protected function checkUser($firstname, $email) {
 
-        $stmt =$this->connect()->prepare('SELECT firstname FROM users WHERE firstname = ? or email = ?;');
+        $stmt =$this->connect()->prepare('SELECT firstname FROM accounts WHERE firstname = ? or email = ?;');
 
         if (!$stmt->execute(array($firstname, $email))) {
             $stmt = null;
