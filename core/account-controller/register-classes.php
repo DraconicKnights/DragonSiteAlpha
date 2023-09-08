@@ -1,5 +1,10 @@
 <?php 
 
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    header("Location: ../../site/index.php");
+    return;
+}
+
 class Register extends Dbh {
 
     protected function setUser($firstname, $lastname, $email, $password) {

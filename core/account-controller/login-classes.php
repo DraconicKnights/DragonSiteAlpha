@@ -1,5 +1,10 @@
 <?php 
 
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    header("Location: ../../site/index.php");
+    return;
+}
+
 class Login extends Dbh {
 
     protected function getUser($email, $password) {
@@ -37,7 +42,7 @@ class Login extends Dbh {
 
             if (!$stmt->rowCount() == 0) {
                 $stmt = null;
-                header("location: ../../site/index.php?error=nouser");
+                header("location: ../../site/index.php?error=nouser-return");
                 exit();
             }
 
