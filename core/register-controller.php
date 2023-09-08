@@ -11,8 +11,8 @@ class RegisterController extends Register {
     {
         $this->firstname = $firstname;
         $this->lastname = $lastname;
-        $this->password = $password;
         $this->email = $email;
+        $this->password = $password;
     }
 
     public function registerUser() {
@@ -33,7 +33,7 @@ class RegisterController extends Register {
             exit();
         }
 
-        $this->setUser($this->firstname, $this->lastname, $this->password, $this->email);
+        $this->setUser($this->firstname, $this->lastname, $this->email, $this->password);
 
     }
 
