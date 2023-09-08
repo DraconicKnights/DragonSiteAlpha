@@ -7,7 +7,7 @@ class RegisterController extends Register {
     private $password;
     private $email;
 
-    public function __construct($firstname, $lastname, $password, $email) 
+    public function __construct($firstname, $lastname, $email, $password) 
     {
         $this->firstname = $firstname;
         $this->lastname = $lastname;

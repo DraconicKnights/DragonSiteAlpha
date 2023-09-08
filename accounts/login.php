@@ -1,48 +1,28 @@
 <?php 
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submit"])) {
+
+    // Grabbing Web Data
 
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    try {
+    // Instantiate Classes
 
-        require_once "../includes/db.php";
+    include "../core/includes/db.php";
+    include "../core/login-classes.php";
+    include "../core/login-controller.php";
+    $login = new LoginController($email, $password);
 
-        $query = "SELECT * FROM accounts WHERE email = ?;";
+    // Calls the registerUser method
 
-        $stmt = $pdo->prepare($query);
+    $login->loginUser();
 
-        $stmt->execute([$email]);
+    //Re-directs the user to the dashboard page if succsessfull
 
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        if (empty($results)) {
-            header("Location: ../site/index.html");
-        } else {
-
-            foreach ($results as $row) {
-                if ($row["pwd"] == $password) {
-                    header("Location: ../site/dashboard.php");
-                } else {
-                    header("Location: ../site/index.html");
-                }
-            }
-        }
-
-
-        $pdo = null;
-        $stmt = null;
-
-        die();
-
-    } catch (PDOException $e) {
-        die("Query Failed: " . $e->getMessage());
-    }
+    header("location: ../site/dashboard.php");
 
 
 } else {
     header("Location: ../site/index.html");
 }
-
-?>

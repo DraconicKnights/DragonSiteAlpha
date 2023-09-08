@@ -1,6 +1,6 @@
 <?php 
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submit"])) {
 
     // Grabbing Web Data
 
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     include "../core/includes/db.php";
     include "../core/register-classes.php";
     include "../core/register-controller.php";
-    $register = new RegisterController($firstname, $lastname, $password, $email);
+    $register = new RegisterController($firstname, $lastname, $email, $password);
 
     // Calls the registerUser method
 
@@ -28,5 +28,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } else {
     header("Location: ../site/index.html");
 }
-
-?>

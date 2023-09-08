@@ -1,3 +1,8 @@
+<?php
+  session_start();
+?>
+
+
 <html>
 <head>
 <link rel="stylesheet" href="../assets/styles/home.css">
