@@ -11,7 +11,11 @@ class Register extends Dbh {
 
         $stmt = $this->connect()->prepare('INSERT INTO accounts (firstname, lastname, email, pwd) VALUES (?, ?, ?, ?);');
 
-        $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+        $options = [
+            'cost' => 14
+        ];
+
+        $hashedPwd = password_hash($password, PASSWORD_DEFAULT, $options);
 
         if (!$stmt->execute(array($firstname, $lastname, $email, $hashedPwd))) {
             $stmt = null;
