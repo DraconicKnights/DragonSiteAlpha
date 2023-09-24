@@ -1,7 +1,6 @@
 <?php
-  session_start();
+    session_start();
 ?>
-
 
 <html>
 <head>
@@ -15,7 +14,21 @@
       <a href="../site/about.php">About</a>
       <a href="../site/services.php">Services</a>
       <a href="../site/contact.php">Contact</a>
-      <button class="btnLogin-popup">Login</button>
+      <?php 
+          if(isset($_SESSION["userid"])) 
+          {
+      ?>
+          <a href="#"><?php echo $_SESSION["useruid"]; ?></a>
+          <a href="../core//accounts/logout.php" class="btnLogin-popup">Logout</button>
+      <?php
+          }
+          else 
+          {
+      ?>
+          <button class="btnLogin-popup">Login</button>
+      <?php
+          }
+      ?>
     </nav>
   </header>
 

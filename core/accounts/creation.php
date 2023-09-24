@@ -9,6 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST["email"];
     $password = $_POST["password"];
 
+    if (!isset($_POST['checkbox-bool'])) {
+        header("location: ../../site/index.php?error=did-not-agree-terms");
+        return;
+    }
+
     // Instantiate Classes
 
     include "../includes/db.php";
@@ -22,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //Re-directs the user to the dashboard page if succsessfull
 
-    header("location: ../../site/dashboard.php");
+    header("location: ../../site/");
 
 
 } else {

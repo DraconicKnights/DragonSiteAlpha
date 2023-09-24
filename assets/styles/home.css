@@ -13,6 +13,8 @@ body {
   background: url('../images/home-page-background.jpg') no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: #23282c;
+  background-image: none;
 }
 
 header {
@@ -27,16 +29,10 @@ header {
   z-index: 99;
 }
 
-.logo {
-  font-size: 2em;
-  color: #fff;
-  user-select: none;
-}
-
 .navigation a {
   position: relative;
   font-size: 1.1em;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 500;
   margin-left: 40px;

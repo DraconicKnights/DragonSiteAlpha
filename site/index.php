@@ -2,20 +2,37 @@
   session_start();
 ?>
 
-
 <html>
 <head>
 <link rel="stylesheet" href="../assets/styles/home.css">
 </head>
 <body>
   <header>
-    <h2 class="logo">Logo</h2>
+    <h2 class="logo">
+      <a href="../site/index.php">
+        <img class="logo-img" src="../assets/images/DSCPIconSquare.png" alt="Logo" width="70px" height="70px">
+      </a>
+    </h2>
     <nav class="navigation">
       <a href="../site/index.php">Home</a>
       <a href="../site/about.php">About</a>
       <a href="../site/services.php">Services</a>
       <a href="../site/contact.php">Contact</a>
-      <button class="btnLogin-popup">Login</button>
+      <?php 
+          if(isset($_SESSION["userid"])) 
+          {
+      ?>
+          <a href="#"><?php echo $_SESSION["useruid"]; ?></a>
+          <a href="../core//accounts/logout.php" class="btnLogin-popup">Logout</button>
+      <?php
+          }
+          else 
+          {
+      ?>
+          <button class="btnLogin-popup">Login</button>
+      <?php
+          }
+      ?>
     </nav>
   </header>
 

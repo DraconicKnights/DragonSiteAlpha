@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //Re-directs the user to the dashboard page if succsessfull
 
-    header("location: ../../site/dashboard.php");
+    header("location: ../../site/");
 
 
 } else {

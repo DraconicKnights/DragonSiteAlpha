@@ -40,7 +40,7 @@ class Login extends Dbh {
                 exit();
             }
 
-            if (!$stmt->rowCount() == 0) {
+            if ($stmt->rowCount() == 0) {
                 $stmt = null;
                 header("location: ../../site/index.php?error=nouser-return");
                 exit();
@@ -50,7 +50,7 @@ class Login extends Dbh {
 
             session_start();
             $_SESSION["userid"] = $user[0]["id"];
-            $_SESSION["useruid"] = $user[0]["email"];
+            $_SESSION["useruid"] = $user[0]["firstname"];
 
             $stmt = null;
         }
