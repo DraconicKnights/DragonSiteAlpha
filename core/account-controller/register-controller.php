@@ -21,6 +21,7 @@ class RegisterController extends Register {
     }
 
     public function registerUser() {
+
         if ($this->emptyInput() == false) {
             header("location: ../../site/index.php?error=emptyinput");
             exit();

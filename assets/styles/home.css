@@ -10,10 +10,24 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url('../images/home-page-background.jpg') no-repeat;
+  /* background: url('../images/home-page-background.jpg') no-repeat; */
+  background-color: #181731;
   background-size: cover;
   background-position: center;
 }
+
+/* Colour Values and sets */
+
+/* navbars = #242344 */
+/* infobox = #242344 */
+/* nav-text = #fffff */
+/* text-input = #7289DA */
+
+/* Colour Values and sets */
+
+
+
+/* navigation bar css  */
 
 header {
   position: fixed;
@@ -25,6 +39,23 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 99;
+}
+
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #242344;
+  border-radius: 8px;
+}
+
+.active {
+  color: #778fe8;
 }
 
 .navigation a {
@@ -43,7 +74,7 @@ header {
   bottom: -6px;
   width: 100%;
   height: 3px;
-  background: #fff;
+  background: #7289DA;
   border-radius: 5px;
   transform-origin: right;
   transform: scaleX(0);
@@ -59,7 +90,7 @@ header {
   width: 130px;
   height: 50px;
   background: transparent;
-  border: 2px solid #fff;
+  border: 2px solid #7289DA;
   outline: none;
   border-radius: 6px;
   cursor: pointer;
@@ -71,15 +102,17 @@ header {
 }
 
 .navigation .btnLogin-popup:hover {
-  background: #fff;
+  background: #7289DA;
   color: #162938;
 }
+
+/* login and register box css */
 
 .wrapper {
   position: relative;
   width: 400px;
   height: 440px;
-  background: transparent;
+  background: #242344;
   border: 2px solid rgba(255, 255, 255, .5);
   border-radius: 20px;
   backdrop-filter: blur(20px);
@@ -132,7 +165,7 @@ header {
   right: 0;
   width: 45px;
   height: 45px;
-  background: #162938;
+  background: #7289DA;
   font-size: 2em;
   color: #fff;
   display: flex;
@@ -145,7 +178,7 @@ header {
 
 .form-box h2 {
   font-size: 2em;
-  color: #162938;
+  color: #7289DA;
   text-align: center;
 }
 
@@ -153,7 +186,7 @@ header {
   position: relative;
   width: 100%;
   height: 25px;
-  border-bottom: 2px solid #162938;
+  border-bottom: 2px solid #7289DA;
   margin: 30px 0;
 }
 
@@ -163,7 +196,7 @@ header {
   left: 5px;
   transform: translateY(-50%);
   font-size: 1em;
-  color: #162938;
+  color: #7289DA;
   font-weight: 500;
   pointer-events: none;
   transition: .5s;
@@ -181,7 +214,7 @@ header {
   border: none;
   outline: none;
   font-size: 1em;
-  color: #162938;
+  color: #7289DA;
   font-weight: 600;
   padding: 0 35px 0 5px;
 }
@@ -190,13 +223,13 @@ header {
   position: absolute;
   right: 8px;
   font-size: 1.2em;
-  color: #162938;
+  color: #7289DA;
   line-height: 57px;
 }
 
 .remember-forgot {
   font-size: .9em;
-  color: #162938;
+  color: #7289DA;
   font-weight: 500;
   margin: -15px 0 15px;
   display: flex;
@@ -204,7 +237,7 @@ header {
 }
 
 .remember-forgot label input {
-  accent-color: #162938;
+  accent-color: #7289DA;
   margin-right: 3px;
 }
 
@@ -215,7 +248,7 @@ header {
 .btn {
   width: 100%;
   height: 45px;
-  background: #162938;
+  background: #7289DA;
   border: none;
   outline: none;
   border-radius: 6px;
@@ -227,18 +260,47 @@ header {
 
 .login-register {
   font-size: .9em;
-  color: #162938;
+  color: #7289DA;
   text-align: center;
   font-weight: 500;
   margin: 25px 0 10px;
 }
 
 .login-register p a {
-  color: #162938;
+  color: #7289DA;
   text-decoration: none;
   font-weight: 600;
 }
 
 .login-register p a:hover {
   text-decoration: underline;
+}
+
+.login-box-link {
+  font-size: .9em;
+  color: #7289DA;
+  transition: transform .5s;
+}
+
+.login-box-link:hover {
+  color: #778fe8;
+}
+
+.error-box {
+  width: 75%;
+  height: 12%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  position: absolute;
+  top: 90%;
+}
+
+.error {
+  color: crimson;
+  text-align: left;
+  font-size: 1.3em;
+  position: absolute;
+  top: 88%;
 }
