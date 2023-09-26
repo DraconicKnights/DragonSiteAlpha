@@ -7,15 +7,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 class RegisterController extends Register {
 
-    private $firstname;
-    private $lastname;
+    private $username;
     private $password;
     private $email;
 
-    public function __construct($firstname, $lastname, $email, $password) 
+    public function __construct($username, $email, $password) 
     {
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
+        $this->username = $username;
         $this->email = $email;
         $this->password = $password;
     }
@@ -39,7 +37,7 @@ class RegisterController extends Register {
             exit();
         }
 
-        $this->setUser($this->firstname, $this->lastname, $this->email, $this->password);
+        $this->setUser($this->username, $this->email, $this->password);
 
     }
 
@@ -47,7 +45,7 @@ class RegisterController extends Register {
 
     private function emptyInput() {
         $result = false;
-        if (empty($this->firstname) || empty($this->lastname) || empty($this->password) || empty($this->email)) {
+        if (empty($this->username) || empty($this->password) || empty($this->email)) {
             $resut = false;
         } else {
             $result = true;
@@ -57,7 +55,7 @@ class RegisterController extends Register {
 
     private function invalidName() {
         $result = false;
-        if (!preg_match("/^[a-zA-Z0-9]*$/", $this->firstname) || !preg_match("/^[a-zA-Z0-9]*$/", $this->lastname)) {
+        if (!preg_match("/^[a-zA-Z0-9]*$/", $this->username)) {
             $result = false;
         } else {
             $result = true;
@@ -79,7 +77,7 @@ class RegisterController extends Register {
     private function emailTakenCheck() {
         $result = false;
 
-        if (!$this->checkUser($this->firstname, $this->email)) {
+        if (!$this->checkUser($this->username, $this->email)) {
             $result = false;
         } else {
             $result = true;

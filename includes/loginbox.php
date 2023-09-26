@@ -37,15 +37,8 @@
           <span class="icon">
             <ion-icon name="person"></ion-icon>
           </span>
-          <input type="text" name="firstname" required>
-          <label>Firstname</label>
-        </div>
-        <div class="input-box">
-          <span class="icon">
-            <ion-icon name="person"></ion-icon>
-          </span>
-          <input type="text" name="lastname" required>
-          <label>Lastname</label>
+          <input type="text" name="username" required>
+          <label>Username</label>
         </div>
         <div class="input-box">
           <span class="icon"><ion-icon name="mail"></ion-icon></span>

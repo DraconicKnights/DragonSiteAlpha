@@ -14,8 +14,10 @@
           if(isset($_SESSION["userid"])) 
           {
       ?>
-          <a href="#"><?php echo $_SESSION["useruid"]; ?></a>
-          <a href="../core//accounts/logout.php" class="btnLogin-popup">Logout</button>
+          <form action="/core/accounts/logout.php" method="post">
+            <button class="btnLogin-popup">Logout</button>
+          </form>
+          <a href="../site/profile.php"><?php echo htmlspecialchars($_SESSION["useruid"]); ?></a>
       <?php
           }
           else 

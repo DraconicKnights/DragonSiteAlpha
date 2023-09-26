@@ -4,8 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Grabbing Web Data
 
-    $firstname = $_POST["firstname"];
-    $lastname = $_POST["lastname"];
+    $username = $_POST["username"];
     $email = $_POST["email"];
     $password = $_POST["password"];
 
@@ -19,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     include "../includes/db.php";
     include "../account-controller/register-classes.php";
     include "../account-controller/register-controller.php";
-    $register = new RegisterController($firstname, $lastname, $email, $password);
+    $register = new RegisterController($username, $email, $password);
 
     // Calls the registerUser method
 

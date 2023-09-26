@@ -5,11 +5,16 @@
 <html>
 <head>
   <!-- Head -->
-  <?php $page ='contact'; include "../includes/head.php"; ?>
+  <?php include "../includes/head.php"; ?>
   <!-- Head -->
 </head>
 
 <body>
+
+  <div class="wrapper-profile-page">
+
+  </div>
+
 
   <!-- Navbar -->
   <?php include "../includes/navbar.php"; ?>

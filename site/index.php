@@ -1,5 +1,5 @@
 <?php
-  session_start();
+  require_once '../config.php';
 ?>
 
 <html>
@@ -11,7 +11,7 @@
 
 <body>
 
-  <div>
+  <div class="wrapper-main-img">
 
   </div>
 
@@ -31,6 +31,10 @@
   <!-- Scripts -->
   <?php include "../includes/scripts.php"; ?>
   <!-- Scripts -->
+
+  <!-- Footer -->
+  <?php include "../includes/footer.php"; ?>
+  <!-- Footer -->
 
 </body>
 </html>
