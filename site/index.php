@@ -11,9 +11,13 @@
 
 <body>
 
-  <div class="wrapper-main-img">
+
+
+
+  <div>
 
   </div>
+
 
 
   <!-- Navbar -->
