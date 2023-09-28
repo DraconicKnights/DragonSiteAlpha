@@ -26,16 +26,22 @@
           <ion-icon name="moon"></ion-icon>
         </span>      
       </a>
-      <?php
-        if(isset($_SESSION['user_id'])) {
-          echo "<form action='/core/accounts/logout.php' method='post'>
-                  <button class='btnLogin-popup'>Logout</button>
-                </form>";
-        }
-        else {
-          echo "<button class='btnLogin-popup'>Login</button>";
-        }
-      ?>
+        <?php
+          if(isset($_SESSION['user_id'])) {
+        ?>
+          <form action='/core/accounts/logout.php' method='post'>
+            <button class='btnLogin-popup'>Logout</button>
+          </form>
+        <?php
+          }
+          else
+          {
+        ?>
+          <button class='btnLogin-popup'>Login</button>
+        <?php
+          }
+        ?>
+    
     </nav>
   </div>
 </header>
