@@ -48,10 +48,15 @@ class Login extends Dbh {
 
             $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            session_start();
-            session_regenerate_id(true);
-            $_SESSION["userid"] = $user[0]["id"];
-            $_SESSION["useruid"] = $user[0]["firstname"];
+            $newSessionId = session_create_id();
+            $sessionId = $newSessionId . "_" . $user[0]["sessionid"];
+            session_id($sessionId);
+
+            $_SESSION["user_id"] = $user[0]["id"];
+            $_SESSION["user_username"] = htmlspecialchars($user[0]["username"]);
+            $_SESSION["user_email"] = htmlspecialchars($user[0]["email"]);
+
+            $_SESSION["last_regeneration"] = time();
 
             $stmt = null;
         }

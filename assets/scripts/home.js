@@ -1,3 +1,5 @@
+// Login and Registraition Scripts
+
 const wrapper = document.querySelector('.wrapper');
 const loginlink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
@@ -18,4 +20,12 @@ btnPopup.addEventListener('click', () => {
 
 iconClose.addEventListener('click', ()=> {
     wrapper.classList.remove('active-popup');
+})
+
+// Theme Scripts
+
+const theme = document.getElementById("theme-switch");
+
+theme.addEventListener('click', ()=> {
+    document.body.classList.toggle("light-theme");
 })

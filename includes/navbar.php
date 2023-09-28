@@ -1,7 +1,7 @@
 <header>
   <div class="navbar-wrapper">
     <h2 class="logo">
-      <a href="../site/index.php">
+      <a href="../site/">
         <img class="nav-logo-img" src="../assets/images/DSCPIconSquare.png" alt="Logo">
       </a>
     </h2>
@@ -21,25 +21,20 @@
           <ion-icon name="settings"></ion-icon>
         </span>      
       </a>
-      <?php 
-          if(isset($_SESSION["userid"])) 
-          {
-      ?>
-          <form action="/core/accounts/logout.php" method="post">
-            <button class="btnLogin-popup">Logout</button>
-          </form>
-          <a href="../site/profile.php"><?php
-          $username = htmlspecialchars($_SESSION["useruid"]);
-          echo ($username); ?>
-          </a>
+      <a href="#">
+        <span class="icon" id="theme-switch">
+          <ion-icon name="moon"></ion-icon>
+        </span>      
+      </a>
       <?php
-          }
-          else 
-          {
-      ?>
-          <button class="btnLogin-popup">Login</button>
-      <?php
-          }
+        if(isset($_SESSION['user_id'])) {
+          echo "<form action='/core/accounts/logout.php' method='post'>
+                  <button class='btnLogin-popup'>Logout</button>
+                </form>";
+        }
+        else {
+          echo "<button class='btnLogin-popup'>Login</button>";
+        }
       ?>
     </nav>
   </div>
