@@ -7,10 +7,10 @@
     </h2>
     <nav class="navigation">
       <a href="../site/" class=" <?php if ($page=='home') {echo 'active';}?>">Home</a>
-      <a href="../site/about.php" class=" <?php if ($page=='home') {echo 'active';}?>">About</a>
-      <a href="../site/services.php" class=" <?php if ($page=='home') {echo 'active';}?>">Services</a>
-      <a href="../site/contact.php" class=" <?php if ($page=='home') {echo 'active';}?>">Contact</a>
-      <a href="../site/contact.php" class=" <?php if ($page=='home') {echo 'active';}?>">Contact</a>
+      <a href="../site/news.php" class=" <?php if ($page=='news') {echo 'active';}?>">News</a>
+      <a href="../site/about.php" class=" <?php if ($page=='about') {echo 'active';}?>">About</a>
+      <a href="../site/services.php" class=" <?php if ($page=='services') {echo 'active';}?>">Services</a>
+      <a href="../site/contact.php" class=" <?php if ($page=='contact') {echo 'active';}?>">Contact</a>
     </nav>
     <nav class ="navigation-profile-bar">
       <a href="../site/profile.php">
@@ -29,9 +29,7 @@
         <?php
           if(isset($_SESSION['user_id'])) {
         ?>
-          <form action='/core/accounts/logout.php' method='post'>
-            <button class='btnLogin-popup'>Logout</button>
-          </form>
+          <button class='btnLogin-popup'>Logout</button>
         <?php
           }
           else

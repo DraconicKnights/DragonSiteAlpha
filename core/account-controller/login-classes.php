@@ -5,6 +5,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     return;
 }
 
+require_once "../includes/config.php";
+
 class Login extends Dbh {
 
     protected function getUser($email, $password) {
@@ -48,15 +50,9 @@ class Login extends Dbh {
 
             $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            $newSessionId = session_create_id();
-            $sessionId = $newSessionId . "_" . $user[0]["sessionid"];
-            session_id($sessionId);
+            $Authenticate = new Authentication();
 
-            $_SESSION["user_id"] = $user[0]["id"];
-            $_SESSION["user_username"] = htmlspecialchars($user[0]["username"]);
-            $_SESSION["user_email"] = htmlspecialchars($user[0]["email"]);
-
-            $_SESSION["last_regeneration"] = time();
+            $Authenticate->DataCollection($user);
 
             $stmt = null;
         }
