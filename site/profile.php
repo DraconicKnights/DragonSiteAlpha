@@ -1,5 +1,5 @@
 <?php
-  require_once '../config.php';
+  require_once '../core/includes/config.php';
 ?>
 
 <html>
@@ -14,7 +14,6 @@
   <div class="wrapper-profile-page">
     
   </div>
-
 
   <!-- Navbar -->
   <?php include "../includes/navbar.php"; ?>

@@ -5,7 +5,7 @@
 <html>
 <head>
   <!-- Head -->
-  <?php $page ='home'; include "../includes/head.php"; ?>
+  <?php $page ='news'; include "../includes/head.php"; ?>
   <!-- Head -->
 </head>
 

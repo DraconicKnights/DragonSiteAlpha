@@ -172,7 +172,7 @@ header {
 /* login and register box css */
 
 .wrapper {
-  position: relative;
+  position: fixed;
   width: 400px;
   height: 440px;
   background: var(--nav-colour);
@@ -391,7 +391,7 @@ header {
   color: var(--nav-text-colour);
   text-decoration: none;
   font-weight: 300;
-  left: 260%;
+  left: 203%;
   align-items: center;
   margin-left: 35;
   justify-content: space-between;

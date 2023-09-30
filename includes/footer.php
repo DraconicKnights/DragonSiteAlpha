@@ -2,6 +2,7 @@
     <div class="footer-main-links">
         <nav class="footer-nav-high">
             <a href="../site/index.php">Home</a>
+            <a href="../site/index.php">News</a>
             <a href="../site/about.php">About</a>
             <a href="../site/services.php">Services</a>
             <a href="../site/contact.php">Contact</a>

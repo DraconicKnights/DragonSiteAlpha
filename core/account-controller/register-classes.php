@@ -11,7 +11,7 @@ class Register extends Dbh {
 
     protected function setUser($username, $email, $password) {
 
-        $stmt = $this->connect()->prepare('INSERT INTO accounts (sessionid, username, email, pwd) VALUES (?, ?, ?, ?);');
+        $stmt = $this->connect()->prepare('INSERT INTO accounts (sessionid, username, email, pwd, administrator, moderator, client, pfp) VALUES (?, ?, ?, ?, ?, ?, ?, ?);');
 
         $options = [
             'cost' => 14
@@ -25,7 +25,9 @@ class Register extends Dbh {
 
         $hashedPwd = password_hash($password, PASSWORD_DEFAULT, $options);
 
-        if (!$stmt->execute(array($sessionID, $username, $email, $hashedPwd))) {
+        $defaultpfp = "../../assets/images/DSCPIconSquare.png";
+
+        if (!$stmt->execute(array($sessionID, $username, $email, $hashedPwd, 0, 0, 0, $defaultpfp))) {
             $stmt = null;
             header("location: ../../site/index.php?error=stmtfailed");
             exit();

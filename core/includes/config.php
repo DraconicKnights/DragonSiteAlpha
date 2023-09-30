@@ -11,8 +11,6 @@ session_set_cookie_params([
     'httponly' => true
 ]);
 
-session_start();
-
 if (isset($_SESSION["user_id"])) {
 
     if (!isset($_SESSION["last_regeneration"])) {
@@ -35,8 +33,6 @@ if (isset($_SESSION["user_id"])) {
     }
 }
 
-
-
 function RegenActiveSession() {
     
     session_regenerate_id(true);
@@ -44,7 +40,7 @@ function RegenActiveSession() {
     $userId = $_SESSION["user_id"];
 
     $newSessonId = session_create_id();
-    $sessionId = $newSessonId . "-" . $userId;
+    $sessionId = $newSessonId . "_" . $userId;
     session_id($sessionId);
 
     $_SESSION["last_regeneration"] = time();
@@ -55,3 +51,23 @@ function RegenSession() {
     $_SESSION["last_regeneration"] = time();
 }
 
+class Authentication {
+
+    public function DataCollection(array $data) {
+        $this->Start($data);
+    }
+
+    private function Start(array $data) {
+
+        session_start();
+
+        $userid = $data[0]["sessionid"];
+        $newsessionId = session_create_id();
+        $sessionId = $newsessionId . "_" . $userid;
+        session_id($sessionId);
+
+        $_SESSION["user_id"] = $data[0]["sessionid"];
+        $_SESSION["user_admin"] = $data[0]["administrator"];
+
+    }
+}
