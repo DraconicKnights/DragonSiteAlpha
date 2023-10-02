@@ -1,5 +1,5 @@
 <?php
-  require_once '../core/includes/config.php';
+  require_once "../core/session-controller/config.php";
 ?>
 
 <html>
@@ -18,6 +18,10 @@
   <!-- Login and Register Box -->
   <?php include "../includes/loginbox.php"; ?>
   <!-- Login and Register Box -->
+
+  <!-- Setting box -->
+  <?php include "../includes/settings.php"; ?>
+  <!-- Setting box -->
 
   <!-- Error Handler -->
   <?php include "../includes/error.php"; ?>

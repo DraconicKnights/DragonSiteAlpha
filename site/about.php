@@ -1,5 +1,5 @@
 <?php
-  session_start();
+  require_once "../core/session-controller/config.php";
 ?>
 
 <html>

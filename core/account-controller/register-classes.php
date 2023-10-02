@@ -33,6 +33,12 @@ class Register extends Dbh {
             exit();
         }
 
+        require_once "../session-controller/config.php";
+
+        $auth = new AuthenticationRegiser();
+
+        $auth->DataCollection($sessionID);
+
         $stmt = null;
     }
 

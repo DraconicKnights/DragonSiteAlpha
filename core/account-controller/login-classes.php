@@ -1,12 +1,5 @@
 <?php 
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    header("Location: ../../site/index.php");
-    return;
-}
-
-require_once "../includes/config.php";
-
 class Login extends Dbh {
 
     protected function getUser($email, $password) {
@@ -50,9 +43,11 @@ class Login extends Dbh {
 
             $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            $Authenticate = new Authentication();
+            require_once "../session-controller/config.php";
 
-            $Authenticate->DataCollection($user);
+            $auth = new AuthenticationLogin();
+
+            $auth->DataCollection($user);
 
             $stmt = null;
         }
