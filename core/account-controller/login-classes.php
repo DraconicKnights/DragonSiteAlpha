@@ -1,5 +1,10 @@
 <?php 
 
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    header("Location: ../../site/index.php");
+    return;
+}
+
 class Login extends Dbh {
 
     protected function getUser($email, $password) {
