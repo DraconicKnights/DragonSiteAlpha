@@ -1,10 +1,5 @@
 <?php 
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    header("Location: ../../site/index.php");
-    return;
-}
-
 class LoginController extends Login {
 
     private $email;
@@ -26,12 +21,10 @@ class LoginController extends Login {
 
     }
 
-
-
     private function emptyInput() {
         $result = false;
         if (empty($this->email) || empty($this->password)) {
-            $resut = false;
+            $result = false;
         } else {
             $result = true;
         }

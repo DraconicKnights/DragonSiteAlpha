@@ -16,9 +16,14 @@
       <a href="../site/profile.php">
         <img class="profile-img" src="../assets/images/DSCPIconSquare.png" alt="Logo" width="25px" height="25px">
       </a>
-      <a href="../site/profile.php">
-        <span class="icon">
+      <a href="#">
+        <span class="icon" id="setting-switch">
           <ion-icon name="settings"></ion-icon>
+        </span>      
+      </a>
+      <a href="#">
+        <span class="icon" id="notfication-switch">
+          <ion-icon name="notifications"></ion-icon>
         </span>      
       </a>
       <a href="#">

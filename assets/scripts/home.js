@@ -29,3 +29,11 @@ const theme = document.getElementById("theme-switch");
 theme.addEventListener('click', ()=> {
     document.body.classList.toggle("light-theme");
 })
+
+// Setting Scripts
+
+const setting = document.getElementById("setting-switch");
+
+setting.addEventListener('click', ()=> {
+    
+})

@@ -1,5 +1,5 @@
 <?php
-  require_once '../core/includes/config.php';
+  require_once "../core/session-controller/config.php";
 ?>
 
 <html>
