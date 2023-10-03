@@ -19,9 +19,12 @@
   <?php include "../includes/loginbox.php"; ?>
   <!-- Login and Register Box -->
 
-  <!-- Setting box -->
-  <?php include "../includes/settings.php"; ?>
-  <!-- Setting box -->
+  <div class="main-wrapper">
+    <div class="main-content">
+        <h1>Example</h1>
+        <p> This is something</p>
+    </div>
+  </div>
 
   <!-- Error Handler -->
   <?php include "../includes/error.php"; ?>
