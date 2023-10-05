@@ -1,39 +1,7 @@
-// Login and Registraition Scripts
-
-const wrapper = document.querySelector('.wrapper');
-const loginlink = document.querySelector('.login-link');
-const registerLink = document.querySelector('.register-link');
-const btnPopup = document.querySelector('.btnLogin-popup');
-const iconClose = document.querySelector('.icon-close');
-
-registerLink.addEventListener('click', ()=> {
-    wrapper.classList.add('active');
-});
-
-loginlink.addEventListener('click', ()=> {
-    wrapper.classList.remove('active');
-});
-
-btnPopup.addEventListener('click', () => {
-    wrapper.classList.add('active-popup');
-})
-
-iconClose.addEventListener('click', ()=> {
-    wrapper.classList.remove('active-popup');
-})
-
 // Theme Scripts
 
 const theme = document.getElementById("theme-switch");
 
 theme.addEventListener('click', ()=> {
     document.body.classList.toggle("light-theme");
-})
-
-// Setting Scripts
-
-const setting = document.getElementById("setting-switch");
-
-setting.addEventListener('click', ()=> {
-    
 })
