@@ -14,10 +14,6 @@
   <?php include "../includes/navbar.php"; ?>
   <!-- Navbar -->
 
-  <!-- Error Handler -->
-  <?php include "../includes/error.php"; ?>
-  <!-- Error Handler -->
-
   <!-- Scripts -->
   <?php include "../includes/scripts.php"; ?>
   <!-- Scripts -->

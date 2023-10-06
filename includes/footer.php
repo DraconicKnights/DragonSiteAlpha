@@ -1,14 +1,14 @@
 <footer class="footer-wrapper">
     <div class="footer-main-links">
         <nav class="footer-nav-high">
-            <a href="../site/index.php">Home</a>
-            <a href="../site/index.php">News</a>
+            <a href="../site/">Home</a>
+            <a href="../site/news.php">News</a>
             <a href="../site/about.php">About</a>
             <a href="../site/services.php">Services</a>
             <a href="../site/contact.php">Contact</a>
         </nav>
         <nav class="footer-nav-socials">
-            <p href="../site/index.php">Socials</p>
+            <p>Socials</p>
         </nav>
         <nav class="footer-nav-low">
             <a href="../site/index.php">
@@ -21,7 +21,9 @@
 
     <div class="copyright-text">
         <a>
-            <p>© Dragon Inn</p>
+            <?php
+            echo "<p>© Dragon Inn - 2023 - " . date("Y") . "</p>"
+            ?>
         </a>
     </div>
 
