@@ -31,20 +31,7 @@
           <ion-icon name="moon"></ion-icon>
         </span>      
       </a>
-        <?php
-          if(isset($_SESSION['user_id'])) {
-        ?>
-          <button class='btnLogin-popup'>Logout</button>
-        <?php
-          }
-          else
-          {
-        ?>
-          <button class='btnLogin-popup'>Login</button>
-        <?php
-          }
-        ?>
-    
+      <button class='btnLogin-popup'>Login</button>
     </nav>
   </div>
 </header>
